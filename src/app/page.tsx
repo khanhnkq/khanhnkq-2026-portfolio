@@ -2,6 +2,7 @@ import { Hero } from "@/components/sections/Hero";
 import { TechStack } from "@/components/sections/TechStack";
 import { Contact } from "@/components/sections/Contact";
 import { Projects } from "@/components/sections/Projects";
+import { Achievements } from "@/components/sections/Achievements";
 import { GameHUD } from "@/components/layout/GameHUD";
 import { ParallaxSection } from "@/components/layout/ParallaxSection";
 import { AuroraBackground } from "@/components/ui/aurora-background";
@@ -38,9 +39,14 @@ export default function Home() {
       <ParallaxSection id="projects" className="z-30 bg-transparent">
         <Projects />
       </ParallaxSection>
+
+      {/* LAYER 4: TROPHY HALL - ACHIEVEMENTS */}
+      <ParallaxSection id="achievements" className="z-40 bg-transparent">
+        <Achievements />
+      </ParallaxSection>
       
-      {/* LAYER 4: GUILD - CONTACT */}
-      <ParallaxSection id="contact" className="z-40 bg-transparent">
+      {/* LAYER 5: GUILD - CONTACT */}
+      <ParallaxSection id="contact" className="z-50 bg-transparent">
         <Contact />
       </ParallaxSection>
     </main>

@@ -8,6 +8,7 @@ const menuItems = [
   { id: "hero", label: "STATUS" }, // Mapping to Status as it's the main character info
   { id: "tech-stack", label: "SKILLS" },
   { id: "projects", label: "QUESTS" },
+  { id: "achievements", label: "TROPHIES" },
   { id: "contact", label: "GUILD" },
 ];
 
@@ -41,6 +42,7 @@ export const GameHUD = () => {
       "hero": ["root", "src", "sections"],
       "tech-stack": ["root", "src", "sections"],
       "projects": ["root", "src", "sections"],
+      "achievements": ["root", "src", "sections"],
       "contact": ["root", "src", "sections"],
     };
     
@@ -163,6 +165,11 @@ export const GameHUD = () => {
                 <TreeFile value="projects">
                   <span className={cn(activeSection === "projects" && "text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]")}>
                     quests.projects
+                  </span>
+                </TreeFile>
+                <TreeFile value="achievements">
+                  <span className={cn(activeSection === "achievements" && "text-violet-400 drop-shadow-[0_0_8px_rgba(167,139,250,0.8)]")}>
+                    trophies.achievements
                   </span>
                 </TreeFile>
                 <TreeFile value="contact">

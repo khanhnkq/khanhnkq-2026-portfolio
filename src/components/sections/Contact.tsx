@@ -122,6 +122,7 @@ export const Contact = () => {
                     placeholder="your.id@domain.com"
                     className="w-full bg-transparent px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none"
                     required
+                    suppressHydrationWarning
                   />
                   {/* Corner Brackets */}
                   <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-cyan-500/50"></div>
@@ -151,6 +152,7 @@ export const Contact = () => {
                     rows={5}
                     className="w-full bg-transparent px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none resize-none custom-scrollbar"
                     required
+                    suppressHydrationWarning
                   />
                   {/* Corner Brackets */}
                   <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-cyan-500/50"></div>
