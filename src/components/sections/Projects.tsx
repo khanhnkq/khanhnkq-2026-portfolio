@@ -5,91 +5,55 @@ import { GlitchText } from "@/components/ui/glitch-text";
 import { QuestItem } from "@/components/ui/quest-item";
 import { QuestDetail } from "@/components/ui/quest-detail";
 
+interface Project {
+  id: number;
+  title: string;
+  type: string;
+  difficulty: string;
+  status: string;
+  description: string;
+  tags: string[];
+  image: string;
+  link: string;
+  github?: string;
+  github_be?: string;
+  completed: boolean;
+}
+
 // Enhanced Mock Data for RPG theme
-const projects = [
+const projects: Project[] = [
+  {
+    id: 0,
+    title: "Connect",
+    type: "SOCIAL_NET",
+    difficulty: "S-RANK",
+    status: "LIVE",
+    description: "A comprehensive social platform designed for the CodeGym community. Features real-time interactions, networking, and content sharing.",
+    tags: ["React 19", "Spring Boot", "Microservices", "Kafka", "WebSocket", "Firebase", "Flyway", "MySQL"],
+    image: "/connect-preview.png",
+    link: "https://connect-cg.vercel.app",
+    github: "https://github.com/khanhnkq/connectCG",
+    github_be: "https://github.com/HoangLeoO/connectCG_BE",
+    completed: true
+  },
   {
     id: 1,
-    title: "Shadow Monarch",
-    type: "SYSTEM_ARCH",
-    difficulty: "S-RANK",
-    status: "ONLINE",
-    description: "Personal portfolio engineered with Next.js 16 and Tailwind v4. Features 3D spatial UI components, high-performance animations, and a custom-built immersive design system inspired by Solo Leveling.",
-    tags: ["Next.js", "Three.js", "Tailwind", "Framer Motion"],
-    image: "https://assets.aceternity.com/macbook-scroll.png",
-    link: "https://github.com/khanhnkq/portfolio-2026",
-    github: "https://github.com/khanhnkq/portfolio-2026",
-    completed: true
-  },
-  {
-    id: 2,
-    title: "EcoSphere AI",
-    type: "AI_MODEL",
-    difficulty: "A-RANK",
-    status: "TRAINING",
-    description: "An AI-driven climate monitoring dashboard leveraging satellite imagery and predictive transformations. Processes terabytes of environmental data to forecast localized climate shifts.",
-    tags: ["Python", "TensorFlow", "React", "Mapbox"],
-    image: "https://assets.aceternity.com/world-map.webp",
-    link: "#",
-    github: "#",
-    completed: true
-  },
-  {
-    id: 3,
-    title: "Nexus Commerce",
-    type: "WEB_APP",
-    difficulty: "A-RANK",
-    status: "MAINTENANCE",
-    description: "Headless e-commerce architecture designed for extreme scalability. Integrates real-time inventory management with decentralized crypto payment gateways.",
-    tags: ["Node.js", "GraphQL", "Solidity", "Redis"],
-    image: "https://assets.aceternity.com/layout-grid.png",
-    link: "#",
-    github: "#",
-    completed: false
-  },
-  {
-    id: 4,
-    title: "CyberDeck Terminal",
-    type: "TOOLING",
+    title: "E-Gov Portal",
+    type: "GOV_PORTAL",
     difficulty: "B-RANK",
     status: "STABLE",
-    description: "A browser-based SSH client featuring a retro-futuristic CRT visualization. Supports macro recordings, multi-session management, and custom themes.",
-    tags: ["Rust", "WebAssembly", "Xterm.js", "WebSocket"],
-    image: "https://assets.aceternity.com/typewriter-effect.png",
-    link: "#",
-    github: "#",
-    completed: true
-  },
-  {
-    id: 5,
-    title: "HoloChat",
-    type: "XR_DEV",
-    difficulty: "S-RANK",
-    status: "BETA",
-    description: "Augmented Reality messaging interface for mixed reality headsets. Projects holographic chat bubbles into physical space with hand-tracking gesture controls.",
-    tags: ["Unity", "C#", "Firebase", "Oculus SDK"],
-    image: "https://assets.aceternity.com/animated-modal.png",
-    link: "#",
-    github: "#",
-    completed: false
-  },
-  {
-    id: 6,
-    title: "Void Runner",
-    type: "GAME_DEV",
-    difficulty: "B-RANK",
-    status: "RELEASED",
-    description: "A high-octane WebGL endless runner game. Features procedurally generated environments and an adaptive audio engine that reacts to player speed.",
-    tags: ["Three.js", "WebAudio", "GLSL", "React Three Fiber"],
-    image: "https://assets.aceternity.com/shooting-stars-and-stars-background.png",
-    link: "#",
-    github: "#",
+    description: "A modern public service portal designed for Đà Nẵng City. Streamlines administrative procedures, allows online document submission, and provides real-time status tracking.",
+    tags: ["Java 17", "Spring Boot", "Thymeleaf", "MySQL", "WebSocket", "MapStruct", "VNPay"],
+    image: "/egov-preview.png",
+    link: "https://egov-cg.duckdns.org/",
+    github: "https://github.com/HoangLeoO/project_module4_dvc",
     completed: true
   }
 ];
 
 export const Projects = () => {
-  const [selectedId, setSelectedId] = useState<number>(1);
-  const selectedProject = projects.find(p => p.id === selectedId) || projects[0];
+  const [selectedId, setSelectedId] = useState<number>(0);
+  const selectedProject: Project = projects.find(p => p.id === selectedId) || projects[0];
 
   return (
     <section className="h-screen relative flex flex-col pt-24 pb-4 overflow-hidden font-rajdhani">
@@ -133,6 +97,7 @@ export const Projects = () => {
                  tech: selectedProject.tags,
                  link: selectedProject.link,
                  github: selectedProject.github,
+                 github_be: selectedProject.github_be,
                  type: selectedProject.type,
                  status: selectedProject.status
                }} 

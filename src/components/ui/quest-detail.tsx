@@ -13,6 +13,7 @@ interface QuestDetailProps {
     tech: string[];
     link?: string;
     github?: string;
+    github_be?: string;
     type?: string;
     status?: string;
   };
@@ -192,13 +193,23 @@ export const QuestDetail = ({ project }: QuestDetailProps) => {
                      <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   </button>
                 )}
-                {project.github && (
+                 {project.github && (
                   <button 
                     onClick={() => handleCommand(`git_clone --repo "${project.github}"`, project.github)}
                     className="group flex items-center gap-2 text-gray-400 hover:text-white hover:bg-white/10 px-3 py-1.5 transition-colors border border-transparent hover:border-white/20"
                   >
                      <span className="text-gray-600 font-bold">{">"}</span>
-                     <span className="uppercase tracking-wider font-bold">VIEW_SOURCE</span>
+                     <span className="uppercase tracking-wider font-bold">{project.github_be ? "FE_SOURCE" : "VIEW_SOURCE"}</span>
+                     <Github size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </button>
+                )}
+                {project.github_be && (
+                  <button 
+                    onClick={() => handleCommand(`git_clone --repo "${project.github_be}"`, project.github_be)}
+                    className="group flex items-center gap-2 text-gray-400 hover:text-white hover:bg-white/10 px-3 py-1.5 transition-colors border border-transparent hover:border-white/20"
+                  >
+                     <span className="text-gray-600 font-bold">{">"}</span>
+                     <span className="uppercase tracking-wider font-bold">BE_SOURCE</span>
                      <Github size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   </button>
                 )}
