@@ -24,6 +24,19 @@ interface Project {
 const projects: Project[] = [
   {
     id: 0,
+    title: "QuizKen",
+    type: "AI_GENERATOR",
+    difficulty: "S-RANK",
+    status: "LIVE",
+    description: "An AI-powered quiz generation platform that transforms any topic into educational quizzes instantly. Features multi-language support, gamification (XP, levels, daily quests), and detailed analytics.",
+    tags: ["React", "TypeScript", "Vite", "Supabase", "PostgreSQL", "Edge Functions", "Gemini API"],
+    image: "/quizken-preview.png",
+    link: "https://quizken.vercel.app",
+    github: "https://github.com/khanhnkq/quizken",
+    completed: true
+  },
+  {
+    id: 1,
     title: "Connect",
     type: "SOCIAL_NET",
     difficulty: "S-RANK",
@@ -37,7 +50,7 @@ const projects: Project[] = [
     completed: true
   },
   {
-    id: 1,
+    id: 2,
     title: "E-Gov Portal",
     type: "GOV_PORTAL",
     difficulty: "B-RANK",

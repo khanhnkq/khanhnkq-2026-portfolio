@@ -9,7 +9,7 @@ import { GlitchText } from "@/components/ui/glitch-text";
 const socialLinks = [
   { icon: Github, label: "GitHub", href: "https://github.com/khanhnkq", color: "hover:text-white" },
   { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/khanhnkq", color: "hover:text-blue-400" },
-  { icon: Mail, label: "Email", href: "mailto:contact@khanhnkq.dev", color: "hover:text-cyan-400" },
+  { icon: Mail, label: "Email", href: "mailto:khanhnguyenkim30825@gmail.com", color: "hover:text-cyan-400" },
   { icon: MessageCircle, label: "Discord", href: "#", color: "hover:text-violet-400" },
 ];
 
