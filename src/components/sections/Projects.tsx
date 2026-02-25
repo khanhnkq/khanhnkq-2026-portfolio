@@ -32,7 +32,6 @@ const projects: Project[] = [
     tags: ["React", "TypeScript", "Vite", "Supabase", "PostgreSQL", "Edge Functions", "Gemini API"],
     image: "/quizken-preview.png",
     link: "https://quizken.vercel.app",
-    github: "https://github.com/khanhnkq/quizken",
     completed: true
   },
   {
